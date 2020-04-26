@@ -41,6 +41,8 @@ namespace coursework
             one.vid = v;
             one.opisanie = opisanie_.Text;
             one.Save();
+            MessageBox.Show("Напиток добавлен");
+            this.Close();
         }
 
         private void Redakt_Click(object sender, EventArgs e)
@@ -50,6 +52,8 @@ namespace coursework
             one.vid = vid_form.Text;
             one.opisanie = opisanie_.Text;
             one.Save();
+            MessageBox.Show("Напиток отредактирован");
+            this.Close();
         }
     }
 }

@@ -35,10 +35,14 @@ namespace coursework
             {
                 adres_file.Text = openFileDialog1.FileName;
                 FILE_WORK.adr_file = openFileDialog1.FileName;
+                dataGridView1.Visible = true;
                 FillData();
+
 
             }
             Delete.Visible = true;
+            New.Visible = true;
+            groupBox2.Visible = true;
         }
        
         private void Poisk_TextChanged(object sender, EventArgs e)
@@ -56,6 +60,7 @@ namespace coursework
         {
             Vid novoe = new Vid();
             novoe.ShowDialog();
+            dataGridView1.DataSource = FILE_WORK.ReadTable();
         }
 
         private void Delete_Click(object sender, EventArgs e)
@@ -65,9 +70,6 @@ namespace coursework
             dataGridView1.DataSource = FILE_WORK.ReadTable();
         }
 
-        private void refresh_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = FILE_WORK.ReadTable();
-        }
+     
     }
 }
